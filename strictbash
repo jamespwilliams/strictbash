@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# The last argument will be the script to be executed:
+declare -r SCRIPTNAME="${@: -1}"
+
+declare -i OPT_SHELLCHECK=0
+declare -i OPT_SETIFS=1
+while [ ! -z "${1:-}" ]; do
+    case "$1" in
+    --shellcheck) OPT_SHELLCHECK=1;;
+    --no-ifs)     OPT_SETIFS=0;;
+    esac
+    shift
+done
+
+if [ "$OPT_SHELLCHECK" -eq 1 ]; then
+    # Pass -e SC2096 to stop shellcheck complaining about shebangs with
+    # parameters, which is how this script is expected to be called:
+    shellcheck -e SC2096 --shell "bash" "$SCRIPTNAME"
+fi
+
+if [ "$OPT_SETIFS" -eq 1 ]; then
+    IFS=$'\n\t'
+fi
+
+source "$SCRIPTNAME"
