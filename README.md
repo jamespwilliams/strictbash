@@ -52,7 +52,7 @@ use its shellcheck feature, in which case you must install
 by:
 
 ```bash
-curl https://raw.githubusercontent.com/jamespwilliams/strictbash/main/strictbash
+curl -O https://raw.githubusercontent.com/jamespwilliams/strictbash/main/strictbash
 # move somewhere on your $PATH
 ```
 
