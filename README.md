@@ -69,3 +69,13 @@ or install with
 ```
 nix profile install github:jamespwilliams/strictbash
 ```
+
+## Test file
+
+Here's a file you can paste somewhere as a test:
+
+```bash
+#!/usr/bin/env -S strictbash --shellcheck
+
+echo $undefined
+```
