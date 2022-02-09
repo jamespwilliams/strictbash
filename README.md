@@ -6,6 +6,8 @@ Mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/).
 Also, with one flag, `strictbash` allows you to pass your script through
 [shellcheck](https://github.com/koalaman/shellcheck) before it's run.
 
+`strictbash` is an experiment and probably shouldn't be used in production :).
+
 <p align="center">
 <img src="https://github.com/jamespwilliams/strictbash/raw/main/screenshots/no-options.png" width=400>
 <p align="center"><i>Default strictbash usage</i></p>
